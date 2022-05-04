@@ -29,7 +29,9 @@ try {
     /**
      * Connect to Mongodb Server
      **/
-    mongoose.connect(process.env.MONGO_URI);
+    mongoose.connect(process.env.MONGO_URI, () => {
+        console.log(`Mongodb is connect`);
+    });
 } catch (err) {
     console.log(err);
 }
